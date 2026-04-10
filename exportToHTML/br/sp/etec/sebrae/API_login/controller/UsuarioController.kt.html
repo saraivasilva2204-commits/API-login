@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>UsuarioController.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UsuarioController.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">br</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">.</span><span class="s1">etec</span><span class="s2">.</span><span class="s1">sebrae</span><span class="s2">.</span><span class="s1">API_login</span><span class="s2">.</span><span class="s1">controller</span>
+
+<span class="s1">import br</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">.</span><span class="s1">etec</span><span class="s2">.</span><span class="s1">sebrae</span><span class="s2">.</span><span class="s1">API_login</span><span class="s2">.</span><span class="s1">entity</span><span class="s2">.</span><span class="s1">Usuario</span>
+<span class="s1">import br</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">.</span><span class="s1">etec</span><span class="s2">.</span><span class="s1">sebrae</span><span class="s2">.</span><span class="s1">API_login</span><span class="s2">.</span><span class="s1">repository</span><span class="s2">.</span><span class="s1">UsuarioRepository</span>
+<span class="s1">import org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">factory</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">Autowired</span>
+<span class="s1">import org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">http</span><span class="s2">.</span><span class="s1">ResponseEntity</span>
+<span class="s1">import org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">stereotype</span><span class="s2">.</span><span class="s1">Controller</span>
+<span class="s1">import org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">PostMapping</span>
+<span class="s1">import org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">RequestBody</span>
+
+<span class="s1">@Controller</span>
+<span class="s0">class </span><span class="s1">UsuarioController </span><span class="s2">{</span>
+
+    <span class="s1">@Autowired</span>
+    <span class="s0">var </span><span class="s1">repository : UsuarioRepository? </span><span class="s2">= </span><span class="s0">null</span>
+
+    <span class="s1">@PostMapping</span><span class="s2">(</span><span class="s3">&quot;/cadastro&quot;</span><span class="s2">)</span>
+    <span class="s0">fun </span><span class="s1">cadastrarUsuario</span><span class="s2">(</span><span class="s1">@RequestBody usuario: Usuario</span><span class="s2">)</span><span class="s1">: ResponseEntity</span><span class="s2">&lt;</span><span class="s1">Usuario</span><span class="s2">&gt; {</span>
+
+        <span class="s0">return </span><span class="s1">ResponseEntity</span><span class="s2">.</span><span class="s1">ok</span><span class="s2">(</span><span class="s1">repository</span><span class="s2">!!.</span><span class="s1">save</span><span class="s2">(</span><span class="s1">usuario</span><span class="s2">))</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span></pre>
+</body>
+</html>
