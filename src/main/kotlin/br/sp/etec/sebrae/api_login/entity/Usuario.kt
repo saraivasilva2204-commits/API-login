@@ -1,4 +1,4 @@
-package br.sp.etec.sebrae.API_login.entity
+package br.sp.etec.sebrae.api_login.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -16,4 +16,5 @@ class Usuario {
     var telefone: String? = null
     var senha: String? = null
     var cpf : String? = null
+
 }

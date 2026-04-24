@@ -1,4 +1,4 @@
-package br.sp.etec.sebrae.API_login
+package br.sp.etec.sebrae.api_login
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
